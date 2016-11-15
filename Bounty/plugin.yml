@@ -1,0 +1,6 @@
+name: Bounty
+main: dev.mannyyy.bounty.BountiesPlugin
+version: 1.0
+author: Mannyyy
+commands:
+  bounty:
