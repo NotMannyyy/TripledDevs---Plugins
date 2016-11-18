@@ -16,12 +16,12 @@ public class mainListener implements Listener{
         if (e.getEntity() instanceof Player) {
             Player k = e.getEntity().getKiller();
             Player p = (Player) e.getEntity();
-            String bountyamount = BountiesPlugin.getPlugin().getConfig().getString(p.getName() + ".bounty");
+            String bountyamount = BountiesPlugin.getPlugin().getConfig().getString("Bounties." + p.getName() + ".bounty");
             if (bountyamount == null) {
                 bountyamount = "0";
             }
             if(BountiesPlugin.getPlugin().getConfig().getInt(p.getName() + ".bounty") > 0){
-            	Bukkit.getServer().broadcastMessage(BountiesPlugin.prefix + ChatColor.GRAY + k.getName() + " Claimed " + p.getName() + "'s of " + ChatColor.GREEN + "$" + BountiesPlugin.getPlugin().getConfig().getInt(p.getName() + ".bounty"));
+            	Bukkit.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&',BountiesPlugin.getPlugin().getConfig().getString("Prefix") + " " + BountiesPlugin.getPlugin().getConfig().getString("BountyClaimedBroadcast")).replace("{arrow}", "»").replace("{bamount}", bountyamount).replace("{target}", p.getName()).replace("{tbamount}", BountiesPlugin.getPlugin().getConfig().getString(p.getName() + ".bounty").replace("{player}", k.getName())));
             	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "eco give " + k.getName() + " " + BountiesPlugin.getPlugin().getConfig().getInt(p.getName() + ".bounty"));
             	BountiesPlugin.getPlugin().getConfig().set(p.getName() + ".bounty", 0);
             	BountiesPlugin.getPlugin().saveConfig();

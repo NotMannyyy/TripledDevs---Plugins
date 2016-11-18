@@ -1,0 +1,28 @@
+Prefix: " &dBOUNTY&8 {arrow}"
+
+Bounty: "&7Current Bounty: {bamount}"
+
+HelpCommand:
+    - "&7&m----------&r &dBounties &7&m----------"
+    - "&d/bounty {arrow} &7View your bounty"
+    - "&d/bounty <player> {arrow} &7View player's bounty"
+    - "&d/bounty add <player> <amount> {arrow} &7Place a bounty"
+    - "&d/bounty license {arrow} &7Show license info"
+
+TargetBounty: "&7{target}'s bounty is: &a${tbamount}"
+
+AddBountyHelp: "&7Usage: /bounty add <player> <amount>!"
+
+NotEnoghtMoney: "&7You don't have enough money!"
+
+LowPlace: "&7Please enter an amount over 0!"
+
+BountyPlaceBroadcast: "&7There is now a &d${tbamount} &7bounty on &d{target}&7!"
+
+InvalidAmount: "&7Please enter a valid amount!"
+
+PlayerNotOnline: "&7That player is not online!"
+
+BountyClaimedBroadcast: "&d{player} &7Claimed &d{target}'s &7bounty of &a$&d{tbamount}"
+    
+Bounties:

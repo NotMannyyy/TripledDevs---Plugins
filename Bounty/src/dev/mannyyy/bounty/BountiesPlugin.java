@@ -1,7 +1,6 @@
 package dev.mannyyy.bounty;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -16,8 +15,7 @@ import net.milkbowl.vault.economy.Economy;
 public class BountiesPlugin extends JavaPlugin{
 	
 	public static Economy econ = null;
-	static BountiesPlugin plugin;
-	public static String prefix = (ChatColor.DARK_GRAY + "|" + ChatColor.DARK_GREEN + " BOUNTY" + ChatColor.DARK_GRAY + " » "); 
+	public static BountiesPlugin plugin;
 	
 	public void onEnable(){
 		if (!setupEconomy() ) {
@@ -26,6 +24,9 @@ public class BountiesPlugin extends JavaPlugin{
             return;
         }
 		plugin = this;
+		getConfig().options().copyDefaults(true);
+		saveConfig();
+		reloadConfig();
 		BountiesPlugin.registerEvents(this, new mainListener());
 		this.getCommand("bounty").setExecutor(new mainCommands());
 		PluginDescriptionFile pdf = getDescription();
